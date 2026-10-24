@@ -1,12 +1,12 @@
 {
-  "name": "@red-cup-engineering/javascript-code-fabrication-services-section",
+  "name": "@red-cup-engineering/javascript-code-fabrication-engineering-services-section",
   "version": "0.1.0",
   "type": "module",
   "description": "Red Cup Engineering service section for javascript code fabrication.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/red-cup-engineering/javascript-code-fabrication-services-section.git"
+    "url": "git+https://github.com/red-cup-engineering/javascript-code-fabrication-engineering-services-section.git"
   },
   "funding": {
     "type": "individual",
