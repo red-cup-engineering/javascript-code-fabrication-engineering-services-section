@@ -93,10 +93,10 @@ retains those separate duties.
 ## Continuing original Design-to-executable-Code receiving (2026-10-28)
 
 The original child Code Gitlink now selects
-`ab8b9829f2651ddeb41ca6adca4544f62c31d8b2`, restoring the full
+`c6d382a4ccaa332911c3f0ab2338c032870b4e91`, retaining the full
 [original Code PR #14](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/pull/14)
-after its accidental rollback. The restored source passed the existing
-[child native Specification/Design/Code workflow](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/actions/runs/40736631776).
+after its accidental rollback. The Code owner also merged native Guix/Node programme construction in PRs #15–#16 and corrected the packed receiver declaration in PR #17. The current source passed the existing
+[child native Specification/Design/Code workflow](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/actions/runs/40743633470).
 That workflow independently verifies the signed current Specification owner,
 loads its Requirement → Specification → Architecture → HLD → LLD consumer,
 generates executable schema-checked Code adapters and four source-traced test
@@ -116,3 +116,6 @@ This is Code *component* receiving, not a completed Engineering Stage Proof,
 executed authenticated WorkCell, deployed untrusted-code sandbox, SignChain
 attestation, or customer settlement. The unmerged original Software Mission
 and publisher dependency repairs remain actual downstream obligations.
+The selected source includes a typed native Systems constructor, but its
+release and installed Systems receiving are not implied by the ordinary
+Code/JSNode source test; the actual publisher release remains a separate gate.
