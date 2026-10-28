@@ -62,3 +62,30 @@ workflow independently resolves both original supplier Gitlinks, packs that
 exact maker, installs into a clean receiver, and exercises the child behavioral
 test. Code P0 #74 still owns separate serving-host isolation, original
 Work/SignChain, external customer receipt and release.
+
+## Source-qualified ECMAScript module and catalog receiving
+
+The original `services/javascript-node-code-fabrication-services-section`
+Gitlink now selects Code owner
+`7bb05ecc59c3f44145cc805d8f877d94f986d5b7`, whose original
+maker Gitlink selects JSNode Package
+`e254fca3be3d67668b5dc5bce0fe215b66750fe1`.
+The original maker [PR #13](https://github.com/red-cup-engineering/jsnode-package-engineering-services-section/pull/13)
+removed a duplicate export-regex interpretation and uses the house
+JavaScript syntax reader to admit actual source exports. It now
+projects quoted `default`, reserved and dollar-sign ESM exports
+consistently into the executable optional catalog.
+
+The original child Code owner [PR #13](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/pull/13)
+independently installed the new maker through its public package
+exports and ran six native Code-owner tests. Its exact signed
+Specification/Architecture/Design/Code receiving workflow passed.
+
+The incumbent `native-jsnode-code-receiving.yml` in this repository
+still selects **both** exact immutable Gitlinks, packs the producer,
+installs it into a clean consumer and runs the original child tests;
+no new program, runner, WorkCell or duplicate SHA selection is needed
+to receive the updated source. It does not prove a production
+isolated worker, an authenticated SignChain/Work allocation,
+customer acceptance or sale. Original Code Engineering P0 #74
+retains those separate duties.
