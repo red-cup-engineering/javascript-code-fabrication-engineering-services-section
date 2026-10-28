@@ -89,3 +89,30 @@ to receive the updated source. It does not prove a production
 isolated worker, an authenticated SignChain/Work allocation,
 customer acceptance or sale. Original Code Engineering P0 #74
 retains those separate duties.
+
+## Continuing original Design-to-executable-Code receiving (2026-10-28)
+
+The original child Code Gitlink now selects
+`ab8b9829f2651ddeb41ca6adca4544f62c31d8b2`, restoring the full
+[original Code PR #14](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/pull/14)
+after its accidental rollback. The restored source passed the existing
+[child native Specification/Design/Code workflow](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/actions/runs/40736631776).
+That workflow independently verifies the signed current Specification owner,
+loads its Requirement → Specification → Architecture → HLD → LLD consumer,
+generates executable schema-checked Code adapters and four source-traced test
+cases, witnesses source/behavioral disagreement and a corrected re-test,
+packs and clean-installs the Code owner, and retains the original JSNode
+maker's distinct six native behavioral tests.
+
+This section's **incumbent** native receiving now independently checks that
+the exact selected child commit has its completed GitHub-hosted native
+`qualified-reference-closure` receipt before packing/installing the
+original maker and running the unchanged Code-owned behavioral receiver.
+The Gitlink and upstream owner's original check, not a mutable branch,
+supply source identity. This reopens integration that was abandoned by the
+previous rollback without inventing another generator or CI suite.
+
+This is Code *component* receiving, not a completed Engineering Stage Proof,
+executed authenticated WorkCell, deployed untrusted-code sandbox, SignChain
+attestation, or customer settlement. The unmerged original Software Mission
+and publisher dependency repairs remain actual downstream obligations.
