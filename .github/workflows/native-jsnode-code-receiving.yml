@@ -53,9 +53,9 @@ jobs:
           )
           shopt -s nullglob
           archives=( "$RUNNER_TEMP"/jsnode-code-source/*.tgz )
-          test "\${#archives[@]}" -eq 1
-          sha256sum "\${archives[0]}"
-          npm install --prefix "$RUNNER_TEMP/jsnode-code-recipient" "\${archives[0]}" --ignore-scripts --no-audit --no-fund --no-package-lock --registry=https://registry.561.group/
+          test "${#archives[@]}" -eq 1
+          sha256sum "${archives[0]}"
+          npm install --prefix "$RUNNER_TEMP/jsnode-code-recipient" "${archives[0]}" --ignore-scripts --no-audit --no-fund --no-package-lock --registry=https://registry.561.group/
           cp "$child/test/jsnode-assay-packed-receiver.mjs" "$RUNNER_TEMP/jsnode-code-recipient/"
           (
             cd "$RUNNER_TEMP/jsnode-code-recipient"
