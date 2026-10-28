@@ -1,0 +1,65 @@
+name: JavaScript Code Fabrication native child receiving
+on:
+  pull_request:
+    paths:
+      - 'services/javascript-node-code-fabrication-services-section'
+      - 'README.md'
+      - '.github/workflows/native-jsnode-code-receiving.yml'
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  child-code-receiving:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Receive reviewed original JavaScript Code source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Select native Node 24
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '24'
+      - name: Independently select the exact original child and maker Gitlinks
+        shell: bash
+        run: |
+          set -euo pipefail
+          child=services/javascript-node-code-fabrication-services-section
+          maker=services/jsnode-package-services-section
+          test "$(git config -f .gitmodules --get submodule.javascript-node-code-fabrication-services-section.url)" = "https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section.git"
+          child_sha="$(git rev-parse "HEAD:$child")"
+          [[ "$child_sha" =~ ^[0-9a-f]{40}$ ]]
+          git -c protocol.file.allow=never submodule update --init -- "$child"
+          test "$(git -C "$child" rev-parse HEAD)" = "$child_sha"
+          test "$(git -C "$child" config -f .gitmodules --get submodule.jsnode-package-services-section.url)" = "https://github.com/red-cup-engineering/jsnode-package-engineering-services-section.git"
+          maker_sha="$(git -C "$child" rev-parse "HEAD:$maker")"
+          [[ "$maker_sha" =~ ^[0-9a-f]{40}$ ]]
+          git -C "$child" -c protocol.file.allow=never submodule update --init -- "$maker"
+          test "$(git -C "$child/$maker" rev-parse HEAD)" = "$maker_sha"
+          echo "Exact original Code child $child_sha and JSNode maker $maker_sha selected from reviewed Gitlinks"
+      - name: Independently install source-pinned maker and run unchanged Code-owned behavioral receiver
+        shell: bash
+        run: |
+          set -euo pipefail
+          child=services/javascript-node-code-fabrication-services-section
+          maker="$child/services/jsnode-package-services-section"
+          mkdir -p "$RUNNER_TEMP/jsnode-code-source" "$RUNNER_TEMP/jsnode-code-recipient"
+          (
+            cd "$maker"
+            npm pack --silent --ignore-scripts --pack-destination "$RUNNER_TEMP/jsnode-code-source" >/dev/null
+          )
+          shopt -s nullglob
+          archives=( "$RUNNER_TEMP"/jsnode-code-source/*.tgz )
+          test "${#archives[@]}" -eq 1
+          sha256sum "${archives[0]}"
+          npm install --prefix "$RUNNER_TEMP/jsnode-code-recipient" "${archives[0]}" --ignore-scripts --no-audit --no-fund --no-package-lock --registry=https://registry.561.group/
+          cp "$child/test/jsnode-assay-packed-receiver.mjs" "$RUNNER_TEMP/jsnode-code-recipient/"
+          (
+            cd "$RUNNER_TEMP/jsnode-code-recipient"
+            node --check jsnode-assay-packed-receiver.mjs
+            node --test --test-reporter=tap jsnode-assay-packed-receiver.mjs
+          )
+          echo "Original source-qualified JSNode Code consumer assayed; this does not establish host isolation, Work or beneficiary receipt"
