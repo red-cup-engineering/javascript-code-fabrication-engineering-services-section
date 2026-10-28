@@ -15,9 +15,9 @@ subdomains continue under `services/`.
 ## Original JSNode maker's Code receiving (2026-10-27)
 
 The existing `services/javascript-node-code-fabrication-services-section` gitlink
-selects exact child source `2741a43881d30860dc1669355be3a13f6bad0bac`, which independently receives the
+selects exact child source `1725668beb6e71a78432c4df2a2691a0bcc0a7bb`, which independently receives the
 upstream JSNode Package behavioral-assay maker at
-`7a13bfe1c5ad7287d4c7631564ef7e0f3bc49fbf`. The child source's
+`5ea672ea74d1395e2bcc9d7d8bf28562970773fe`. The child source's
 [PR #11](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/pull/11)
 passed its complete native Specification/Design/Code workflow including
 an exact packed JSNode producer and a clean Code-owned executable consumer.
@@ -44,3 +44,21 @@ advancement is now one reviewed source-identity change per owner, not
 a hand-synchronized list of maker commit literals throughout CI. Real
 isolation, publication, MetroPlat Work and beneficiary acceptance
 remain separately unreceived.
+
+## Source-qualified Node TAP label compatibility (2026-10-27)
+
+The exact child Code integration commit `1725668beb6e71a78432c4df2a2691a0bcc0a7bb` independently
+packed and installed JSNode maker `5ea672ea74d1395e2bcc9d7d8bf28562970773fe` through its public export.
+The original Code-owned receiver now proves both original and independently
+derived TAP labels containing `#` or backslash refuse before any
+implementation-source inference or isolated execution. Source maker
+[PR #12](https://github.com/red-cup-engineering/jsnode-package-engineering-services-section/pull/12)
+and child Code receiving
+[PR #12](https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/pull/12)
+landed after their Node 24 native workflows passed.
+
+This section advances only its original child Gitlink. Its existing native
+workflow independently resolves both original supplier Gitlinks, packs that
+exact maker, installs into a clean receiver, and exercises the child behavioral
+test. Code P0 #74 still owns separate serving-host isolation, original
+Work/SignChain, external customer receipt and release.
