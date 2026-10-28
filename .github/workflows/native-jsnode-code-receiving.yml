@@ -10,6 +10,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  checks: read
 jobs:
   child-code-receiving:
     runs-on: ubuntu-latest
@@ -40,6 +41,34 @@ jobs:
           git -C "$child" -c protocol.file.allow=never submodule update --init -- "$maker"
           test "$(git -C "$child/$maker" rev-parse HEAD)" = "$maker_sha"
           echo "Exact original Code child $child_sha and JSNode maker $maker_sha selected from reviewed Gitlinks"
+      - name: Receive exact child Code native Specification/Design-to-Code test result
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          child=services/javascript-node-code-fabrication-services-section
+          selected="$(git rev-parse "HEAD:$child")"
+          gh api -H "Accept: application/vnd.github+json" \
+            "repos/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/commits/$selected/check-runs?per_page=100" \
+            > "$RUNNER_TEMP/original-design-code-checks.json"
+          node --input-type=module - "$RUNNER_TEMP/original-design-code-checks.json" "$selected" <<'NODE'
+          import assert from "node:assert/strict";
+          import { readFileSync } from "node:fs";
+          const [, , path, selected] = process.argv;
+          const checks = JSON.parse(readFileSync(path, "utf8")).check_runs ?? [];
+          const accepted = checks.filter(row =>
+            row.name === "qualified-reference-closure" &&
+            row.head_sha === selected &&
+            row.status === "completed" &&
+            row.conclusion === "success" &&
+            row.app?.slug === "github-actions" &&
+            row.details_url?.startsWith("https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/actions/runs/")
+          );
+          assert.equal(accepted.length, 1,
+            "the selected Code source lacks its original independently passed Design-to-executable-Code, installed consumer and signed Specification proof-of-source receiving");
+          console.log("Code source " + selected + ": authenticated original native signed-Spec, generated Code and installed consumer check received.");
+          NODE
       - name: Independently install source-pinned maker and run unchanged Code-owned behavioral receiver
         shell: bash
         run: |
