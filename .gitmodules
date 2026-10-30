@@ -1,4 +1,0 @@
-[submodule "javascript-node-code-fabrication-services-section"]
-	path = services/javascript-node-code-fabrication-services-section
-	url = https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section.git
-	branch = main
