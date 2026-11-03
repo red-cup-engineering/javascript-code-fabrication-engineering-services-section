@@ -10,7 +10,7 @@ its routing; its section is its placement; the conformance instruments are
 its design-rule checks.
 
 The engineering that realizes this is
-`engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-code-fabrication-services-section/services/javascript-node-code-fabrication-services-section/services/jsnode-package-services-section/`,
+`engineering-services-section/services/computer-engineering-services-section/services/computer-code-engineering-services-section/services/javascript-engineering-services-section/services/javascript-code-fabrication-services-section/services/javascript-node-code-fabrication-services-section/services/node-js-packages-engineering-services-section/`,
 whose README states the package-birth program and the dialect its work orders
 are written in. The gap between that dialect and the code-fabrication
 specification, that the work order carries the operation source instead of
