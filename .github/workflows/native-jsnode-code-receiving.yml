@@ -30,7 +30,7 @@ jobs:
           set -euo pipefail
           child=services/javascript-node-code-fabrication-engineering-services-section
           maker=services/jsnode-package-engineering-services-section
-          test "$(git config -f .gitmodules --get submodule.javascript-node-code-fabrication-services-section.url)" = "https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section.git"
+          test "$(git config -f .gitmodules --get submodule.javascript-node-code-fabrication-engineering-services-section.url)" = "https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section.git"
           child_sha="$(git rev-parse "HEAD:$child")"
           [[ "$child_sha" =~ ^[0-9a-f]{40}$ ]]
           git -c protocol.file.allow=never submodule update --init -- "$child"
