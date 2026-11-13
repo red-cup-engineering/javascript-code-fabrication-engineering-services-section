@@ -2,7 +2,7 @@ name: JavaScript Code Fabrication native child receiving
 on:
   pull_request:
     paths:
-      - 'services/javascript-node-code-fabrication-services-section'
+      - 'services/javascript-node-code-fabrication-engineering-services-section'
       - 'README.md'
       - '.github/workflows/native-jsnode-code-receiving.yml'
   push:
@@ -28,7 +28,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          child=services/javascript-node-code-fabrication-services-section
+          child=services/javascript-node-code-fabrication-engineering-services-section
           maker=services/jsnode-package-engineering-services-section
           test "$(git config -f .gitmodules --get submodule.javascript-node-code-fabrication-services-section.url)" = "https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section.git"
           child_sha="$(git rev-parse "HEAD:$child")"
@@ -47,7 +47,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          child=services/javascript-node-code-fabrication-services-section
+          child=services/javascript-node-code-fabrication-engineering-services-section
           selected="$(git rev-parse "HEAD:$child")"
           gh api -H "Accept: application/vnd.github+json" \
             "repos/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section/commits/$selected/check-runs?per_page=100" \
@@ -73,7 +73,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          child=services/javascript-node-code-fabrication-services-section
+          child=services/javascript-node-code-fabrication-engineering-services-section
           maker="$child/services/jsnode-package-engineering-services-section"
           mkdir -p "$RUNNER_TEMP/jsnode-code-source" "$RUNNER_TEMP/jsnode-code-recipient"
           (
