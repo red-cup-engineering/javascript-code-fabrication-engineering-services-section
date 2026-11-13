@@ -29,13 +29,13 @@ jobs:
         run: |
           set -euo pipefail
           child=services/javascript-node-code-fabrication-services-section
-          maker=services/jsnode-package-services-section
+          maker=services/jsnode-package-engineering-services-section
           test "$(git config -f .gitmodules --get submodule.javascript-node-code-fabrication-services-section.url)" = "https://github.com/red-cup-engineering/javascript-node-code-fabrication-engineering-services-section.git"
           child_sha="$(git rev-parse "HEAD:$child")"
           [[ "$child_sha" =~ ^[0-9a-f]{40}$ ]]
           git -c protocol.file.allow=never submodule update --init -- "$child"
           test "$(git -C "$child" rev-parse HEAD)" = "$child_sha"
-          test "$(git -C "$child" config -f .gitmodules --get submodule.jsnode-package-services-section.url)" = "https://github.com/red-cup-engineering/jsnode-package-engineering-services-section.git"
+          test "$(git -C "$child" config -f .gitmodules --get submodule.jsnode-package-engineering-services-section.url)" = "https://github.com/red-cup-engineering/jsnode-package-engineering-services-section.git"
           maker_sha="$(git -C "$child" rev-parse "HEAD:$maker")"
           [[ "$maker_sha" =~ ^[0-9a-f]{40}$ ]]
           git -C "$child" -c protocol.file.allow=never submodule update --init -- "$maker"
@@ -74,7 +74,7 @@ jobs:
         run: |
           set -euo pipefail
           child=services/javascript-node-code-fabrication-services-section
-          maker="$child/services/jsnode-package-services-section"
+          maker="$child/services/jsnode-package-engineering-services-section"
           mkdir -p "$RUNNER_TEMP/jsnode-code-source" "$RUNNER_TEMP/jsnode-code-recipient"
           (
             cd "$maker"
